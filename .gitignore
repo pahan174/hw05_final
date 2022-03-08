@@ -144,9 +144,6 @@ dmypy.json
 .history/
 
 .mypy_cache
+yatube/static/css/bootstrap.min.css
 
-# папки со статикой и медиа
-static/
-yatube/posts/static/
-yatube/media/
-
+yatube/media
