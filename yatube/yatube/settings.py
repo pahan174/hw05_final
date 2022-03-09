@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '77uyshnc^og$0+#c-sl0d2aj94sm-m=96y!srq0h=%0)mb-2a0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 

@@ -100,13 +100,11 @@ class PostViewsTest(TestCase):
         response = self.authorized_client.get(reverse('posts:main'))
 
         first_object = response.context['page_obj'][0]
-        post_title_0 = response.context['title']
         post_text_0 = first_object.text
         post_author_0 = first_object.author.username
         post_group_0 = first_object.group.title
         post_image_0 = first_object.image
 
-        self.assertEqual(post_title_0, 'Последние обновления на сайте')
         self.assertEqual(post_text_0, PostViewsTest.post.text)
         self.assertEqual(post_author_0, PostViewsTest.user.username)
         self.assertEqual(post_group_0, PostViewsTest.group.title)
@@ -151,14 +149,10 @@ class PostViewsTest(TestCase):
 
         first_object = response.context['page_obj'][0]
         post_author_0 = response.context['author']
-        post_title_0 = response.context['title']
         post_text_0 = first_object.text
         post_cnt_posts_0 = response.context['cnt_posts']
         post_image_0 = first_object.image
 
-        self.assertEqual(
-            post_title_0,
-            f'Профайл пользователя {PostViewsTest.user.username}')
         self.assertEqual(post_text_0, 'Тестовый текст')
         self.assertEqual(post_author_0, PostViewsTest.user)
         self.assertEqual(post_cnt_posts_0, 1)
