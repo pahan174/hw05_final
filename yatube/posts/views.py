@@ -108,7 +108,6 @@ def post_edit(request, post_id):
             post.save()
             return redirect('posts:post_detail', post_id=post_id)
         else:
-            # form = PostForm(instance=post)
             context = {
                 'form': form,
                 'is_edit': True,
