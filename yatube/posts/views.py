@@ -153,11 +153,10 @@ def profile_follow(request, username):
     '''Подписаться на автора'''
     author = get_object_or_404(User, username=username)
     if request.user != author:
-        created_object = Follow.objects.get_or_create(
+        Follow.objects.get_or_create(
             user=get_object_or_404(User, username=request.user),
             author=get_object_or_404(User, username=username)
         )
-        print(created_object)
     return redirect('posts:profile', username=username)
 
 
